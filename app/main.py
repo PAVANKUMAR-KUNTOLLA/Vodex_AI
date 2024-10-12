@@ -2,7 +2,13 @@ from fastapi import FastAPI
 from app.db.register import init_db
 from app.core.views import ItemAPI, ClockInAPI
 
-app = FastAPI()
+app = FastAPI(
+    title="Vodex AI",
+    description="Vodex AI Assignment",
+    version="1.0.0",
+    docs_url="/docs",  # Default is /docs
+    redoc_url="/redoc"  # Default is /redoc
+)
 
 @app.on_event("startup")
 async def startup_event():
