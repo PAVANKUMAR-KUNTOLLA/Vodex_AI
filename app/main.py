@@ -16,3 +16,9 @@ async def startup_event():
     # Include the router from ItemAPI
     app.include_router(item_api.get_router())  # Call get_router() to include it
     app.include_router(clock_in_api.get_router())
+
+
+# Sample /hello GET endpoint
+@app.get("/hello")
+async def hello():
+    return {"message": "Hello, World!"}
